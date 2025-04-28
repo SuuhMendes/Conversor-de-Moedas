@@ -25,3 +25,10 @@ Feito em **Java**, utilizando entrada no console.
    ```bash
    git clone https://github.com/SuuhMendes/conversor-de-moedas.git
 
+2.Execute em uma IDE. Sugiro o ´**IntelliJ IDEA**´ ou ´**Eclipse**´:
+
+Abra o projeto na IDE escolhida.
+
+Localize o arquivo Main.java.
+
+Execute o arquivo para iniciar o conversor.
