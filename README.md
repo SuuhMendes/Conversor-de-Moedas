@@ -20,7 +20,7 @@ Este é um projeto em Java que permite converter valores entre diferentes moedas
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/ConversorDeMoeda.git
-````
+``
 
 2. Compile o projeto com sua IDE favorita (IntelliJ, Eclipse etc.) ou via terminal
 
@@ -41,25 +41,11 @@ Para utilizar este conversor, você precisa de uma **API Key gratuita** do site 
 1. Acesse: [https://www.exchangerate-api.com](https://www.exchangerate-api.com)
 2. Clique em **"Get Free API Key"**
 3. Cadastre-se com seu e-mail
-4. Copie a chave fornecida após o cadastro
+4. Copie a chave fornecida após o cadastro. 
 
 Essa chave será usada para autenticar as requisições às taxas de câmbio.
 
 > **Importante:** o sistema solicitará essa chave no console sempre que for executado.
-
-## Estrutura do Projeto
-
-```
-ConversorDeMoeda
-├── src
-│   └── main
-│       └── java
-│           └── com.seuusuario.conversor
-│               ├── Main.java
-│               ├── Conversor.java
-│               └── Moeda.java
-├── pom.xml
-```
 
 ## Licença
 
