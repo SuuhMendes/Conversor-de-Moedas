@@ -1,4 +1,4 @@
-package org.example;
+package app.conversor;
 
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -9,8 +9,9 @@ import java.net.http.HttpResponse;
 
 public class Conversor {
 
-    public Moeda converter(String origem, String destino, double valor) {
-        String url = "https://v6.exchangerate-api.com/v6/18729af99782b68cc48aedf0/pair/" + origem + "/" + destino + "/" + valor;
+    public Moeda converter(String origem, String destino, double valor, String chave_key) {
+
+        String url = "https://v6.exchangerate-api.com/v6/"+chave_key+"/pair/" + origem + "/" + destino + "/" + valor;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().
@@ -19,6 +20,11 @@ public class Conversor {
         HttpResponse<String> response;
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode()!=200){
+                System.out.println("Erro ao converter. Por favor verifique sua chave API.");
+                return null;
+
+            }
 
         } catch (InterruptedException | IOException e) {
             throw new RuntimeException("Nao Conseguimos Encontrar Essa Moeda");

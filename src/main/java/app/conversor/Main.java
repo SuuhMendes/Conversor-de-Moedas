@@ -1,6 +1,5 @@
-package org.example;
+package app.conversor;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,6 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Bem vindo ao conversor de moeda");
+        System.out.println("Antes de prosseguir, digite a sua chave key:");
+        String chave_key=scanner.nextLine();
+
         String menu = """
                     Escolha a opção que voce deseja a conversão:
                     1-Dólar >>>> Peso Argentino
@@ -20,6 +23,9 @@ public class Main {
                     8-Real Brasileiro >>>> Iene Japonês
                     9-SAIR
                 """;
+
+      //  String chave_key="18729af99782b68cc48aedf0";//
+
         boolean prosseguir = true;
 
         while (prosseguir) {
@@ -78,14 +84,20 @@ public class Main {
 
                 Conversor conversor = new Conversor();
                 Moeda moeda = new Moeda();
-                moeda = conversor.converter(origem, destino, valor);
-                double resultado= (double) moeda.getConversion_result();
-                var resultadoFormatado= String.format("%.2f",resultado);
+                moeda = conversor.converter(origem, destino, valor,chave_key);
+                if (moeda==null) {
+                    System.out.println("Não foi possivel relaizar a conversão!");
+                    break;
+                }
+                else{
+                    double resultado = (double) moeda.getConversion_result();
+                    var resultadoFormatado = String.format("%.2f", resultado);
 
-                System.out.println("O Valor de " + valor + " [" + origem + "] " + "Corresponde ao valor de " +resultadoFormatado + " [" + destino + "]");
-
-            }
+                    System.out.println("O Valor de " + valor + " [" + origem + "] " + "Corresponde ao valor de " + resultadoFormatado + " [" + destino + "]");
+                };
+            };
+            };
         }
 
     }
-}
+
