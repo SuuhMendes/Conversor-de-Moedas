@@ -24,8 +24,6 @@ public class Main {
                     9-SAIR
                 """;
 
-      //  String chave_key="18729af99782b68cc48aedf0";//
-
         boolean prosseguir = true;
 
         while (prosseguir) {
